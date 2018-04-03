@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal - Complete Booking</title>
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="user/fragments/header :: header"></div>
+	<div th:replace="admin/fragments/header :: header"></div>
+
+	<div class="section-margin-top"></div>
+
+	<!-- gray bg -->
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="form-group tm-yellow-gradient-bg text-center col-md-8">
+				<div class="col-sm-6">
+					<table>
+						<tr>
+							<td align="left">&nbsp;<img src="/img/calendar.png"
+								width="20" height="20">&nbsp;<label id="lblSpanOfStay"></label>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">&nbsp;<img src="/img/room.png" width="20"
+								height="20">&nbsp;<label id="lblNoOfRooms"></label>
+							</td>
+						</tr>
+						<tr>
+							<td align="left">&nbsp;<img src="/img/members.png"
+								width="20" height="20">&nbsp;<label id="lblNoOfMembers"></label>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="col-sm-6 text-right">
+					<button type="button" id="btnModifySearch" class="tm-yellow-btn">Modify
+						Search</button>
+				</div>
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="col-md-8">
+				<!-- Nav tabs -->
+				<div class="tm-home-box-1-booking">
+					<ul class="nav nav-tabs tm-white-bg" role="tablist"
+						id="bookingTabs">
+						<li role="presentation" class="active"><a href="#hotel"
+							aria-controls="hotel" role="tab" data-toggle="tab">Guest Details</a></li>
+					</ul>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="fade in active tm-white-bg" id="hotel">
+								<div class="tm-search-box effect2">
+									<form action="#" method="post" class="hotel-search-form">
+										<div class="tm-form-inner">
+											<div class="form-group col-sm-12"
+												style="padding-left: 0px; padding-right: 0px;">
+												<input type='text' class="form-control" id="txtGuestName"
+													placeholder="Guest Name" />
+											</div>
+											<div class="form-group">
+												<div class="col-sm-6"
+													style="padding-left: 0px; padding-right: 0px;">
+													<input type='email' class="form-control" id="txtEmailID"
+														placeholder="Email ID" />
+												</div>
+												<div class="col-sm-6"
+													style="padding-left: 0px; padding-right: 0px;">
+													<input type='text' class="form-control"
+														id="txtMobileNumber" placeholder="Mobile Number" />
+												</div>
+											</div>
+											<div class="form-group col-sm-12"
+												style="padding-left: 0px; padding-right: 0px;">
+												<textarea rows="3" class="form-control" id="txtAddress"
+													placeholder="Address"></textarea>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-6"
+													style="padding-left: 0px; padding-right: 0px;">
+													<input type='text' class="form-control" id="txtCity"
+														placeholder="City" />
+												</div>
+												<div class="col-sm-6"
+													style="padding-left: 0px; padding-right: 0px;">
+													<input type='text' class="form-control" id="txtState"
+														placeholder="State" />
+												</div>
+											</div>
+											<div class="form-group">
+												<input type='text' class="form-control-booking"
+													id="txtPinCode" placeholder="Pin Code" />
+											</div>
+											<hr />
+											<label>Payment Information</label>
+											<div class="form-group margin-bottom-0">
+												<select class="form-control" id="ddlTypeOfCard">
+													<option value="">-- Type Of Card --</option>
+													<option value="1">Credit Card</option>
+													<option value="2">Debit Card</option>
+													<option value="3">Opal Card</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<input type='text' class="form-control" id="txtCardNumber"
+													placeholder="Card Number" />
+											</div>
+											<div class="form-group">
+												<table width="100%">
+													<tr>
+														<td width="50%"><select class="form-control"
+															id="ddlExpMonth">
+																<option value="">-- Expiry Month --</option>
+																<option value="1">January</option>
+																<option value="2">February</option>
+																<option value="3">March</option>
+																<option value="4">April</option>
+																<option value="5">May</option>
+																<option value="6">June</option>
+																<option value="7">July</option>
+																<option value="8">August</option>
+																<option value="9">September</option>
+																<option value="10">October</option>
+																<option value="11">November</option>
+																<option value="12">December</option>
+														</select></td>
+														<td><select class="form-control" id="ddlExpYear">
+																<option value="">-- Expiry Year --</option>
+																<option value="2018">2018</option>
+																<option value="2019">2019</option>
+																<option value="2020">2020</option>
+																<option value="2021">2021</option>
+																<option value="2022">2022</option>
+																<option value="2023">2023</option>
+																<option value="2024">2024</option>
+																<option value="2025">2025</option>
+														</select></td>
+													</tr>
+												</table>
+											</div>
+											<div class="form-group">
+												<table>
+													<tr>
+														<td width="8%"><input type='checkbox'
+															class="form-control-checkbox" id="chkAcceptTC" /></td>
+														<td>&nbsp;I accept Opal terms and conditions.</td>
+													</tr>
+												</table>
+											</div>
+											<div class="form-group tm-yellow-gradient-bg text-center">
+												<button type="button" id="btnConfirmBooking"
+													class="tm-yellow-btn">Confirm Booking</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">&nbsp;</div>
+		</div>
+	</section>
+	<div th:replace="user/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/common.js"></script>
+	<script type="text/javascript" src="/customJS/booking.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+	<script>
+		// HTML document is loaded. DOM is ready.
+		$(function() {
+
+			$('#hotelCarTabs a').click(function(e) {
+				e.preventDefault()
+				$(this).tab('show')
+			})
+
+			$('.date').datetimepicker({
+				format : 'MM/DD/YYYY'
+			});
+			$('.date-time').datetimepicker();
+
+			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+			$('a[href*=#]:not([href=#])')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										&& location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop : target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+		});
+
+		// Load Flexslider when everything is loaded.
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				controlNav : false
+			});
+		});
+	</script>
+</body>
+</html>

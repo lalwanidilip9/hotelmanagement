@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal - Event Halls</title>
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="guest/fragments/header :: header"></div>
+	<div th:replace="user/fragments/header :: header"></div>
+	<div th:replace="admin/fragments/header :: header"></div>
+	
+	<div class="modal fade" id="hotelModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h5 class="modal-title"></h5>
+				</div>
+				<div class="modal-body">
+					<div id="actionBtnModalBody">
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div id="actionBtnFooter">
+						<button type="button" class="tm-yellow-btn" id="btnModalPrev">Previous</button>
+						<button type="button" class="tm-yellow-btn" id="btnModalNext">Next</button>
+						<button type="button" class="tm-yellow-btn" id="btnModalCancel">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<div class="section-margin-top"></div>
+	<section class="container tm-home-section-1" id="more">
+
+		<div class="form-group tm-yellow-gradient-bg text-center">
+			<table>
+				<tr>
+					<td align="left">&nbsp;<img src="/img/calendar.png" width="20"
+						height="20">&nbsp;<label id="lblSpanOfStay"></label>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">&nbsp;<img src="/img/room.png" width="20"
+						height="20">&nbsp;<label id="lblEventType"></label>
+					</td>
+				</tr>
+				<tr>
+					<td align="left">&nbsp;<img src="/img/members.png" width="20"
+						height="20">&nbsp;<label id="lblNoOfGuests"></label>
+					</td>
+				</tr>
+			</table>
+			<button type="button" id="btnModifySearch" class="tm-yellow-btn">Modify
+				Search</button>
+		</div>
+		<!-- <div class="row">
+			<div class="form-group table-responsive">
+				<table id="tblEventHalls"
+					class="table table-hover table-condensed small">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th>Event Hall Type</th>
+							<th>Max No Of Guests</th>
+							<th>Hall Charge</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div> -->
+	</section>
+
+	<div th:replace="user/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/common.js"></script>
+	<script type="text/javascript" src="/customJS/eventhalls.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPAL - Login</title>
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="guest/fragments/header :: header" id="divHeader"></div>
+
+	<div class="section-margin-top"></div>
+
+	<!-- gray bg -->
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
+					<img src="img/index-01.jpg" alt="image" class="img-responsive">
+					<a href="#">
+						<div class="tm-green-gradient-bg tm-city-price-container">
+							<span>New York</span> <span>$6,600</span>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<!-- Nav tabs -->
+				<div class="tm-home-box-1">
+					<ul class="nav nav-tabs tm-white-bg" role="tablist"
+						id="hotelCarTabs">
+						<li role="presentation" class="active"><a href="#hotel"
+							aria-controls="hotel" role="tab" data-toggle="tab">Login</a></li>
+						<li role="presentation"><a href="#car" aria-controls="car"
+							role="tab" data-toggle="tab">Sign Up</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active tm-white-bg"
+							id="hotel">
+							<div class="tm-search-box effect2">
+								<form action="#" method="post" class="hotel-search-form">
+									<div class="tm-form-inner">
+										<div class="form-group">
+											<input type='text' class="form-control" id="txtUsername"
+												placeholder="Email ID / Mobile Number" />
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control" id="txtPassword"
+												placeholder="Password" />
+										</div>
+										<div class="form-group margin-bottom-0">
+											<label id="lblMessage">&nbsp;</label>
+										</div>
+										<div class="form-group margin-bottom-0">&nbsp;</div>
+									</div>
+									<div class="form-group tm-yellow-gradient-bg text-center">
+										<button type="button" id="btnLogin" class="tm-yellow-btn">Login</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade tm-white-bg" id="car">
+							<div class="tm-search-box effect2">
+								<form action="#" method="post" class="hotel-search-form">
+									<div class="tm-form-inner">
+										<div class="form-group">
+											<input type='text' class="form-control" id="txtNewUserName"
+												placeholder="Name of User" />
+										</div>
+										<div class="form-group">
+											<input type='text' class="form-control"
+												id="txtNewUserEmailID" placeholder="Email ID" />
+										</div>
+										<div class="form-group">
+											<input type='text' class="form-control"
+												id="txtNewUserMobileNumber" placeholder="Mobile Number" />
+										</div>
+										<div class="form-group">
+											<input type="password" class="form-control"
+												id="txtNewUserPassword" placeholder="Password" />
+										</div>
+										<div class="form-group margin-bottom-0">
+											<label id="lblNewUserMessage">&nbsp;</label>
+										</div>
+										<div class="form-group margin-bottom-0">&nbsp;</div>
+									</div>
+									<div class="form-group tm-yellow-gradient-bg text-center">
+										<button type="button" id="btnSubmit" class="tm-yellow-btn">Submit</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-right">
+					<img src="img/index-02.jpg" alt="image" class="img-responsive">
+					<a href="#">
+						<div class="tm-red-gradient-bg tm-city-price-container">
+							<span>Paris</span> <span>$4,200</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="section-margin-top"></div>
+
+	<div th:replace="guest/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/common.js"></script>
+	<script type="text/javascript" src="/customJS/guest.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+	<script>
+		// HTML document is loaded. DOM is ready.
+		$(function() {
+
+			$('#hotelCarTabs a').click(function(e) {
+				e.preventDefault()
+				$(this).tab('show')
+			})
+
+			$('.date').datetimepicker({
+				format : 'MM/DD/YYYY'
+			});
+			$('.date-time').datetimepicker();
+
+			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+			$('a[href*=#]:not([href=#])')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										&& location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop : target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+		});
+
+		// Load Flexslider when everything is loaded.
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				controlNav : false
+			});
+		});
+	</script>
+</body>
+</html>

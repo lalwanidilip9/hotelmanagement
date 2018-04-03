@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal - Rooms</title>
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="user/fragments/header :: header"></div>
+	<div th:replace="guest/fragments/header :: header"></div>
+	<div th:replace="admin/fragments/header :: header"></div>
+
+	<!-- <div class="section-margin-top"></div> -->
+	
+	<!-- Banner -->
+	<section class="tm-banner">
+		<!-- Flexslider -->
+		<div class="flexslider flexslider-banner">
+			<ul class="slides">
+				<li>
+					<div class="tm-banner-inner">
+						<h1 class="tm-banner-title">
+							<span class="tm-yellow-text">City</span> Connect
+						</h1>
+						<p class="tm-banner-subtitle">Everything at next step</p>
+					</div> <img class='img-responsive' src="/img/banner-1.jpg" />
+				</li>
+				<li>
+					<div class="tm-banner-inner">
+						<h1 class="tm-banner-title">
+							Beautiful <span class="tm-yellow-text"> Garden</span>
+						</h1>
+						<p class="tm-banner-subtitle">For nature lovers</p>
+					</div> <img class='img-responsive' src="/img/banner-2.jpg" />
+				</li>
+				<li>
+					<div class="tm-banner-inner">
+						<h1 class="tm-banner-title">
+							Marvelous<span class="tm-yellow-text"> Ambience</span>
+						</h1>
+						<p class="tm-banner-subtitle">Very well maintained area</p>
+					</div> <img class='img-responsive' src="/img/banner-3.jpg" />
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<div class="modal" id="roomModal" tabindex="-1" role="dialog"
+		data-backdrop="static" data-keyboard="true" style="display: none">
+		<div class="modal-dialog modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title"></h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<img width='200' height='200' id="imgRoom" />
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- gray bg -->
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-center">
+					<img src="/img/index-01.jpg" alt="image" class="img-responsive">
+					<a href="#">
+						<div class="tm-green-gradient-bg tm-city-price-container">
+							<span>New York</span> <span>$6,600</span>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<!-- Nav tabs -->
+				<div class="tm-home-box-1">
+					<ul class="nav nav-tabs tm-white-bg" role="tablist"
+						id="userProfileTabs">
+						<li role="presentation" class="active"><a href="#hotel"
+							aria-controls="hotel" role="tab" data-toggle="tab">Search
+								Rooms</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active tm-white-bg"
+							id="hotel">
+							<div class="tm-search-box effect2">
+								<form action="#" method="post" class="hotel-search-form">
+									<div class="tm-form-inner">
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker1'>
+												<input type='text' id="txtStartDate" class="form-control"
+													placeholder="Check-in Date" /> <span
+													class="input-group-addon"> <span
+													class="fa fa-calendar"></span>
+												</span>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class='input-group date' id='datetimepicker2'>
+												<input type='text' id="txtEndDate" class="form-control"
+													placeholder="Check-out Date" /> <span
+													class="input-group-addon"> <span
+													class="fa fa-calendar"></span>
+												</span>
+											</div>
+										</div>
+										<div class="form-group margin-bottom-0">
+											<select class="form-control" id="ddlNoOfRooms">
+												<option value="">-- No Of Rooms --</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+										</div>
+										<div class="form-group margin-bottom-0">
+											<select class="form-control" id="ddlNoOfAdults">
+												<option value="">-- Adults --</option>
+												<option value="0">0</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+											</select>
+										</div>
+										<div class="form-group margin-bottom-0">
+											<select class="form-control" id="ddlNoOfChildren">
+												<option value="">-- Children --</option>
+												<option value="0">0</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+											</select>
+										</div>
+										<div class="form-group margin-bottom-0">
+											<label id="lblMessage">&nbsp;</label>
+										</div>
+									</div>
+									<div class="form-group tm-yellow-gradient-bg text-center">
+										<button type="button" id="btnSearchRooms"
+											class="tm-yellow-btn">Search</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<div class="tm-home-box-1 tm-home-box-1-2 tm-home-box-1-right">
+					<img src="/img/index-02.jpg" alt="image" class="img-responsive">
+					<a href="#">
+						<div class="tm-red-gradient-bg tm-city-price-container">
+							<span>Paris</span> <span>$4,200</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:replace="user/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/common.js"></script>
+	<script type="text/javascript" src="/customJS/roomSearch.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+	<script>
+		// HTML document is loaded. DOM is ready.
+		$(function() {
+
+			$('#hotelCarTabs a').click(function(e) {
+				e.preventDefault()
+				$(this).tab('show')
+			})
+
+			$('.date').datetimepicker({
+				format : 'MM/DD/YYYY'
+			});
+			$('.date-time').datetimepicker();
+
+			// https://css-tricks.com/snippets/jquery/smooth-scrolling/
+			$('a[href*=#]:not([href=#])')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										&& location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html,body').animate({
+											scrollTop : target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+		});
+
+		// Load Flexslider when everything is loaded.
+		$(window).load(function() {
+			$('.flexslider').flexslider({
+				controlNav : false
+			});
+		});
+	</script>
+</body>
+</html>

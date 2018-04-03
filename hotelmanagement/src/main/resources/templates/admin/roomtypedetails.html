@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal - Room Type Details</title>
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="admin/fragments/header :: header"></div>
+
+	<div class="section-margin-top"></div>
+
+	<div class="modal fade" id="hotelModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h5 class="modal-title"></h5>
+				</div>
+				<div class="modal-body">
+					<div id="actionBtnModalBody"></div>
+				</div>
+				<div class="modal-footer">
+					<div id="actionBtnFooter">
+						<button type="button" class="tm-yellow-btn" id="btnModalDelete">Delete</button>
+						<button type="button" class="tm-yellow-btn" id="btnModalCancel">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<div
+				class=".col-lg-4-ForRoomTypeDetails col-md-4-ForRoomTypeDetails col-sm-6">
+				<!-- Nav tabs -->
+				<div class="tm-home-box-1-roomtypedetails">
+					<ul class="nav nav-tabs tm-white-bg" role="tablist"
+						id="hotelCarTabs">
+						<li role="presentation" class="active"><a href="#hotel"
+							aria-controls="hotel" role="tab" data-toggle="tab">Room Type
+								Details</a></li>
+						<li role="presentation"><a href="#car" aria-controls="car"
+							role="tab" data-toggle="tab">Images</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active tm-white-bg"
+							id="hotel">
+							<div class="tm-search-box effect2">
+								<form action="#" method="post" class="hotel-search-form">
+									<div class="tm-form-inner" id="divDetails">
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Room Type Name</label></td>
+												<td><input type='text' class="form-control"
+													id="txtRoomTypeName" placeholder="Room Type" /></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>No Of Rooms</label></td>
+												<td><input type='text' class="form-control"
+													id="txtNoOfRooms" placeholder="No Of Rooms" /></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>No Of Max Adults</label></td>
+												<td><input type='text' class="form-control"
+													id="txtNoOfMaxAdults" placeholder="No Of Max Adults" /></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>No Of Max Children</label></td>
+												<td><input type='text' class="form-control"
+													id="txtNoOfMaxChildren" placeholder="No Of Max Children" /></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Room Charge</label></td>
+												<td><input type='text' class="form-control"
+													id="txtRoomCharge" placeholder="Room Charge" /></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Description</label></td>
+												<td><textarea rows="3" class="form-control"
+														id="txtDescription" placeholder="Description"></textarea></td>
+											</tr>
+										</table>
+									</div>
+									<div class="form-group tm-yellow-gradient-bg text-center">
+										<button type="button" id="btnSave" class="tm-yellow-btn">Save</button>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade tm-white-bg" id="car">
+							<div class="tm-search-box effect2">
+								<div class="tm-form-inner" id="divImages">
+									<table id="tblImages">
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<div class="section-margin-top"></div>
+
+	<div th:replace="admin/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/common.js"></script>
+	<script type="text/javascript" src="/customJS/roomtypedetails.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+</body>
+</html>

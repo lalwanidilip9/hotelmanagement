@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal</title>
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div class="tm-header" th:fragment="header" id="divUserHeader">
+		<div class="container">
+			<div class="row">
+				<div class="userlogo col-sm-3 tm-site-name-container">
+					<a href="#" class="tm-site-name"> <!-- <img
+						src="/img/logoWithName.jpg" width="140px" height="140px"
+						alt="image" class="img-responsive"> -->
+						<img
+						src="/img/logo.png" width="305.5px" height="144.5px"
+						alt="image" class="img-responsive">
+					</a>
+				</div>
+				<div class="usermenu col-md-8 col-sm-9">
+					<div class="mobile-menu-icon">
+						<i class="fa fa-bars"></i>
+					</div>
+					<nav class="tm-nav">
+						<ul>
+							<li><a id="lnkAboutUs" th:href="@{/aboutus}">Home</a></li>
+							<li><a id="lnkUserRooms" th:href="@{/user/rooms}">Rooms & Tariffs</a></li>
+							<li><a id="lnkUserEvents" th:href="@{/user/events}">Events</a></li>
+							<li><a id="lnkMyProfile" th:href="@{/user/profile}">My Account</a></li>
+							<li><a id="lnkFeedback" th:href="@{/feedback}">Feedback</a></li>
+							<li><a id="lnkLogout" th:href="@{/logout}">Logout</a></li>
+						</ul>
+
+						<!-- <div >
+							<button class="menubutton" type="button">
+								Home<span class="caret"></span>
+							</button>
+							<button class="menubutton" type="button">
+								Rooms <span class="caret"></span>
+							</button>
+							<button class="menubutton" type="button">
+								Home<span></span>
+							</button>
+						</div> -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

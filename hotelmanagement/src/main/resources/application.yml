@@ -1,0 +1,53 @@
+# Spring active profile
+spring:
+  profiles:
+    active: dev
+# JPA Configuration
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        strategy: org.hibernate.cfg.DefaultNamingStrategy
+    show_sql: false
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+    
+---
+# Spring Developemnt profile
+spring:
+
+  profiles: dev
+  
+  # H2 Web Console
+  h2:
+    console:
+      enable: true
+      path: /console
+    
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/HotelDB
+    username: postgres
+    password: root
+
+# Server port used for this applciation
+server:
+  port: 8082
+  error:
+    whitelabel:
+      enabled: true
+# Disable the spring boot basic security
+security:
+    basic:
+     enabled: false
+    
+# Logger settings      
+#logging:
+#  config: classpath:log4j2-spring-dev.xml
+logging:
+  #config: classpath:log4j2-spring-dev.xml
+  file: /tmp/server.log

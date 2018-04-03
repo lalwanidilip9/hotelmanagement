@@ -1,0 +1,19 @@
+usermenu {
+	/* width: 80% */
+}
+
+userlogo {
+	width: "150px"
+}
+
+.col-sm-4-logo {
+	width: 150px
+}
+
+.col-sm-3-logo {
+	width: 150px
+}
+
+menubutton{
+	background-color: white;
+}

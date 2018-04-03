@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Hotel Management - Error</title>
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div>&nbsp;</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div id="aa-error" class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="aa-error-area">
+							<div class="content">
+								<div class="about_desc">
+									<div class="pagenot">
+										<h2>500</h2>
+										<div class="pagenot-text">
+											<h3>Houston, we have a problem!</h3>
+										</div>
+										<p>The page you are looking for is temporarily
+											unavailable.</p>
+										<br />
+										<div class="clearfix" />
+										<div class="error-actions">
+											<a th:href="@{mailto:prabhakar.jha@vanderlande.com}"
+												class="btn btn-primary btn-lg"><span
+												class="glyphicon glyphicon-envelope"></span> Contact Support
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

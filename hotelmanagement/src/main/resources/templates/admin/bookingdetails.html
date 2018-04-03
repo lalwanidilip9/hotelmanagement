@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal - Booking Details</title>
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="admin/fragments/header :: header"></div>
+
+	<div class="modal fade" id="hotelModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h5 class="modal-title"></h5>
+				</div>
+				<div class="modal-body">
+					<div id="actionBtnModalBody">
+						<p></p>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div id="actionBtnFooter">
+						<button type="button" class="tm-yellow-btn" id="btnModalOK">Ok</button>
+						<button type="button" class="tm-yellow-btn" id="btnModalCancel">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<div class="modal fade" id="preclosureModal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">&times;</button>
+					<h5 class="modal-title"></h5>
+				</div>
+				<div class="modal-body">
+					<div class='input-group date' id='datetimepicker1'>
+						<input type='text' id="txtPreclosureDate" value="02/13/2018"
+							class="form-control" placeholder="Preclosure Date" /> </span>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div id="actionBtnFooter">
+						<button type="button" class="tm-yellow-btn"
+							id="btnPreclosureModalOK">Ok</button>
+						<button type="button" class="tm-yellow-btn"
+							id="btnPreclosureModalCancel">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+
+	<div class="section-margin-top"></div>
+
+	<!-- gray bg -->
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<div class=".col-lg-4-ForBooking col-md-4-ForBooking col-sm-6">
+				<!-- Nav tabs -->
+				<div class="tm-home-box-1-booking">
+					<ul class="nav nav-tabs tm-white-bg" role="tablist"
+						id="bookingTabs">
+						<li role="presentation" class="active"><a href="#hotel"
+							aria-controls="hotel" role="tab" data-toggle="tab">Booking
+								Details</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active tm-white-bg"
+							id="hotel">
+							<div class="tm-search-box effect2">
+								<form action="#" method="post" class="hotel-search-form">
+									<div class="tm-form-inner" id="divDetails">
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Guest Name</label></td>
+												<td><label class="form-control" id="lblGuestName"></label></td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Mobile Number</label></td>
+												<td><label class="form-control" id="lblMobileNumber"></label></td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Email ID</label></td>
+												<td><label class="form-control" id="lblEmailID"></label></td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Room Numbers</label></td>
+												<td><label class="form-control" id="lblRoomNumbers"></label></td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>No of Adults</label></td>
+												<td><label class="form-control" id="lblNoOfAdults"></label></td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>No of Children</label></td>
+												<td><label class="form-control" id="lblNoOfChildren"></label></td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Booking Status</label></td>
+												<td><label class="form-control" id="lblBookingStatus"></label></td>
+											</tr>
+										</table>
+									</div>
+									<div class="tm-form-inner">
+										<label id="lblMessage">&nbsp;</label>
+									</div>
+									<div class="form-group tm-yellow-gradient-bg text-center">
+										<table width="100%">
+											<tr>
+												<td width="50%"><button type="button" id="btnPrint"
+														class="tm-yellow-btn">Print</button></td>
+												<td><button type="button" id="btnReleaseRooms"
+														class="tm-yellow-btn">Release Rooms</button></td>
+												<td><button type="button" id="btnPreClosure"
+														class="tm-yellow-btn">Pre Closure</button></td>
+												<td><button type="button" id="btnCancelBooking"
+														class="tm-yellow-btn">Cancel Booking</button></td>
+											</tr>
+										</table>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="section-margin-top"></div>
+	<div th:replace="admin/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/bookingdetails.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+</body>
+</html>

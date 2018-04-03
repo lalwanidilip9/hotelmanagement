@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Opal - Booking Confirmation</title>
+
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700'
+	rel='stylesheet' type='text/css'>
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+<link href="/css/flexslider.css" rel="stylesheet">
+<link href="/css/toastr.min.css" rel="stylesheet">
+<link href="/css/templatemo-style.css" rel="stylesheet">
+
+</head>
+<body class="tm-gray-bg">
+	<div th:replace="user/fragments/header :: header"></div>
+
+	<div class="section-margin-top"></div>
+
+	<!-- gray bg -->
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<div class=".col-lg-4-ForBooking col-md-4-ForBooking col-sm-6">
+				<!-- Nav tabs -->
+				<div class="tm-home-box-1-booking">
+					<ul class="nav nav-tabs tm-white-bg" role="tablist"
+						id="bookingTabs">
+						<li role="presentation" class="active"><a href="#hotel"
+							aria-controls="hotel" role="tab" data-toggle="tab">Booking
+								Confirmation</a></li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active tm-white-bg"
+							id="hotel">
+							<div class="tm-search-box effect2">
+								<form action="#" method="post" class="hotel-search-form">
+									<div class="tm-form-inner" id="divDetails">
+										<table width="100%">
+											<tr style="margin-bottom: 20px">
+												<td width="30%"><label>Guest Name</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblGuestName"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Mobile Number</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblMobileNumber"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Email ID</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblEmailID"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Event Type</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblEventType"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Meal Option</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblMealOption"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>Room Numbers</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblRoomNumbers"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+										<table width="100%">
+											<tr>
+												<td width="30%"><label>No of Adults</label></td>
+												<td width="5%">:</td>
+												<td><label style="font-weight: lighter;" class="form-control-ForBookingConfirmation" id="lblNoOfAdults"></label></td>
+											</tr>
+											<tr>
+												<td width="30%">&nbsp;</td>
+												<td width="5%">&nbsp;</td>
+												<td>&nbsp;</td>
+											</tr>
+										</table>
+									</div>
+									<div class="form-group tm-yellow-gradient-bg text-center">
+										<table width="100%">
+											<tr>
+												<td width="50%"><button type="button" id="btnPrint"
+														class="tm-yellow-btn">Print</button></td>
+												<td><button type="button" id="btnBookAnotherRoom"
+														class="tm-yellow-btn">Book Another Room</button></td>
+											</tr>
+										</table>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div th:replace="user/fragments/footer :: footer"></div>
+
+	<script type="text/javascript" src="/inbuiltJS/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/moment.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/jquerysession.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/bootstrap-table.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript"
+		src="/inbuiltJS/jquery.flexslider-min.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/toastr.min.js"></script>
+	<script type="text/javascript" src="/customJS/eventbookingconfirmation.js"></script>
+	<script type="text/javascript" src="/inbuiltJS/templatemo-script.js"></script>
+</body>
+</html>

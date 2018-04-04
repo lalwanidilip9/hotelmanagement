@@ -17,6 +17,7 @@
 	</parent>
 
 	<properties>
+		<start-class>online.hotelmanagement.App</start-class>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- SPRING overrides the settings from parent pom -->
 		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
@@ -59,6 +60,7 @@
 					</processTypes>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 

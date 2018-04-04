@@ -32,6 +32,11 @@ public class ApplicationUserController {
 		return service.saveUserProfile(user);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value = "/demouser")
+	public String getDemoUser() {
+		return "Dilip Lalwani";
+	}
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/currentuser")
 	public ApplicationUser getCurrentUserDetails(HttpServletRequest req) {
 		return service.getCurrentUserDetails(req);

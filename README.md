@@ -1,6 +1,18 @@
 # Hotel Reservation and Mangement System
-This is a Hotel Reservation and Management System developed using Spring Boot framework and Maven with PostGres database. We created this as a part of 
-course Information Systems Design and Development. In this project we have incorporated various website design principles studied as a part of the course.
+This is a Hotel Reservation and Management System developed using Spring Boot framework and Maven with PostgreSQL database. We created this as a part of our
+course Information Systems Design and Development. In this project we have incorporated various website design principles studied as a part of the course and also have made it responsive to various screens. Design Principles include - 
+
+- Baby Face Bias 
+- Golden Ratio
+- Color and Cognitive Contrast
+- Surprise Elements
+- Uniqueness
+- Responsiveness
+
+# Team Members
+
+Dilip Lalwani, Ayush Agarwal, Kanica Sharma, Suresh kagga
+
 # Screenshots
 
 ![home page](https://user-images.githubusercontent.com/18483671/38232423-8e0fed86-36dc-11e8-8aac-030c54b9d9c2.jpg)
